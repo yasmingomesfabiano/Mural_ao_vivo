@@ -1,2 +1,72 @@
-body { background-color: #121212; color: #ffffff; }
-.card-msg { background-color: #2c2c2c; border-left: 5px solid #ffc107; }
+body{
+    padding: 0;
+    margin: 0;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; bottom: 0; left: 38%;
+    margin: 0 auto 20px;
+    gap: 30px;
+    
+}
+
+input{
+    width: 20vw;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    background-color: aliceblue;
+    text-decoration: none;
+}
+input:focus {
+    outline: none;
+}
+.mural{
+    padding-right: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin: 0 auto;
+    border: 1px solid black;
+    align-items: flex-end;
+    width: 40vw;
+    height: 100vh;
+    gap: 50px;
+    overflow-y: auto;
+    border-radius: 40px;
+    border: 1px solid #edede9;
+    box-shadow: 0 0 12px rgba(173, 181, 189, 0.6);
+
+}
+
+.mensagens{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 20vw; 
+    height: 6vh;
+    border-radius: 30px;
+    background-color: #ffe5ec;
+   
+   
+}
+
+.texto{
+    color: black;
+    
+}
+.button{
+    text-decoration: none;
+    border: none;
+    background-color: #ffe5ec;
+    width: 3vw;
+    height:5vh;
+    border-radius: 50%;
+    cursor: pointer;
+}
+ 

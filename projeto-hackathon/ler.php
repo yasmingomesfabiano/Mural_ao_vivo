@@ -3,7 +3,7 @@ require "conexao.php";
 
 // Busca as últimas 15 linhas em ordem decrescente
 $stmt = $pdo->query("
-    SELECT nome, texto, DATE_FORMAT(data_envio, '%H:%i:%s') as hora FROM mensagens ORDER BY id DESC LIMIT 15
+    SELECT texto, DATE_FORMAT(data_envio, '%H:%i') as hora FROM mensagens ORDER BY id DESC LIMIT 15
 ");
 $mensagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
