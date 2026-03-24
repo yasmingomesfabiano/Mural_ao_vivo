@@ -1,15 +1,21 @@
 body{
     padding: 0;
     margin: 0;
+    background-color: #14213d;
+    z-index: 0;
 }
 
 form{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed; bottom: 0; left: 38%;
+    position: fixed; bottom: 0; left: 25%;
     margin: 0 auto 20px;
     gap: 30px;
+    background-color: #14213d;
+    width: 50vw;
+    border-radius: 20px;
+    border: 2px solid #ffe5ec;
     
 }
 
@@ -25,39 +31,44 @@ input{
 input:focus {
     outline: none;
 }
-.mural{
-    padding-right: 20px;
+.mural {
+    width: 40vw;
+    height: 85vh;        
+    margin: 20px auto;  
+    padding: 20px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    margin: 0 auto;
-    border: 1px solid black;
+    flex-direction: column; 
+    gap: 40px;              
+    overflow-y: auto;      
+    border: 2px solid #ffe5ec;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+    background-color: #778da9; 
     align-items: flex-end;
-    width: 40vw;
-    height: 100vh;
-    gap: 50px;
-    overflow-y: auto;
-    border-radius: 40px;
-    border: 1px solid #edede9;
-    box-shadow: 0 0 12px rgba(173, 181, 189, 0.6);
-
 }
 
-.mensagens{
+.mural::-webkit-scrollbar {
+    display: none;
+}
+.mensagens {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    width: 20vw; 
-    height: 6vh;
-    border-radius: 30px;
-    background-color: #ffe5ec;
-   
-   
-}
+    width: auto; 
+    height: auto; 
+    min-width: 50px;
+    max-width: 80%; 
+    padding: 10px 20px;
+    margin: 5px;
+    
+    border-radius: 20px;
+    background-color: #14213d;
+    color: white;
+    word-wrap: break-word;
+}   
 
 .texto{
-    color: black;
+    color: white;
     
 }
 .button{
@@ -68,5 +79,9 @@ input:focus {
     height:5vh;
     border-radius: 50%;
     cursor: pointer;
+}
+
+#contador{
+    color: white !important;
 }
  

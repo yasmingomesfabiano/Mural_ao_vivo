@@ -2,33 +2,39 @@
 file_put_contents("teste_recebimento.txt", print_r($_POST, true));
 require "conexao.php";
 
-// Verifica se ambos os campos vieram
 $texto = $_POST['texto'] ?? null;
-
+$texto = trim($texto);
 
 if ($texto) {
-    $texto = trim($texto);
- 
-
-    $texto = htmlspecialchars(trim($_POST['texto']));
-
-    // Inserir texto e nome no mesmo registro
-    $stmt = $pdo->prepare("
-        INSERT INTO mensagens (texto) VALUES (:texto)
-    ");
-    $stmt->bindParam(":texto", $texto);
+  
+    $proibidas = ['feio', 'chato', 'burro'];
+    $substituicao = '******';
     
+ 
+    $textoCensurado = str_ireplace($proibidas, $substituicao, $texto);
+
+    $textoFinal = htmlspecialchars($textoCensurado, ENT_QUOTES, 'UTF-8');
+
+    $stmt = $pdo->prepare("INSERT INTO mensagens (texto) VALUES (:texto)");
+    
+    $stmt->bindParam(":texto", $textoFinal);
+
+    $maximo = 500;
+        if (mb_strlen($texto) > $maximo) {
+        echo json_encode(['status' => 'erro', 'mensagem' => 'Atenção: Sua mensagem passou do limite de 500 caracteres.']);
+        exit;
+    }
 
     if ($stmt->execute()) {
         http_response_code(200);
         echo json_encode(['status' => 'sucesso']);
         exit;
+    } else {
+        http_response_code(400);
+        echo json_encode(['status' => 'erro', 'motivo' => 'Dados incompletos']);
+        exit;
     }
-} else {
-    // Se chegar aqui, significa que o PHP recebeu algo vazio ou nulo
-    http_response_code(400); // Bad Request
-    echo json_encode(['status' => 'erro', 'motivo' => 'Dados incompletos']);
-    exit;
+} else { 
+    echo json_encode(['status' => 'erro', 'mensagem' => 'Requisição inválida ou campos vazios.']); 
 }
-
 ?>

@@ -10,12 +10,16 @@
     <div class="container">
       
         <form id="formMensagem" class="form">
-            <input type="text" name="texto" id="texto" class="inputtexto" placeholder="Envie sua mensagem para rede..." required autocomplete="off">
+            <<input type="text" name="texto" id="texto" class="inputtexto" 
+                placeholder="Envie sua mensagem..." required maxlength="500">
             <button type="submit" class="button">Enviar</button>
+            <span id="contador">500</span>
+            <span></span>
         </form>
 
         <div id="mural" class="mural"></div>
     </div>
+    
 
     <script src="main.js"></script>
 </html>
