@@ -55,7 +55,7 @@ form.addEventListener('submit', function(e) {
     .then(dados => { 
         if (dados.status === 'sucesso') { 
             inputTexto.value = ''; 
-            contadorElemento.textContent = `${limite} caracteres restantes`;
+            contadorElemento.textContent = `${limite}`;
             carregarMensagens(); 
         } else { 
             alert("Erro: " + dados.mensagem); 

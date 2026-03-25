@@ -1,4 +1,4 @@
 Array
 (
-    [texto] => <script>alert('Fui Hackeado!');</script> 
+    [texto] => você é feio 
 )
