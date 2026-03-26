@@ -5,7 +5,7 @@ body{
     z-index: 0;
 }
 
-form{
+.form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,3 +85,163 @@ input:focus {
     color: white !important;
 }
  
+
+
+/*chat privado*/
+#janela_privada {
+    display: none; /* Começa escondida, o JS muda para 'block' */
+    position: fixed; /* Fixa a janela na tela mesmo ao rolar a página */
+    bottom: 20px;    /* 20px de distância do fundo */
+    right: 20px;     /* 20px de distância da direita */
+    width: 320px;    /* Largura da janelinha */
+    height: 450px;   /* Altura total */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px 10px 0 0; /* Arredonda os cantos de cima */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+    z-index: 1000;   /* Garante que fique na frente de tudo */
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* Área onde as mensagens aparecem */
+#mural_privado {
+    flex-grow: 1; /* Faz o mural ocupar o espaço disponível */
+    height: 300px;
+    overflow-y: auto; /* Adiciona barra de rolagem se tiver muita mensagem */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilo do título/topo do chat */
+#janela_privada h3 {
+    background-color: #14213d;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo do campo de texto lá embaixo */
+#texto_privado {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+#enviar_privado {
+    padding: 8px;
+    cursor: pointer;
+    background-color: #778da9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.btn_fechar{
+    background-color: #778da9;
+    height: 30px;
+    width: 110px;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ddd;
+    margin: 30px auto;
+    display: block;
+}
+
+
+
+/*login*/
+
+.form_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid #778da9;
+    border-radius: 20px;
+    width: 30vw;
+    margin: 80px auto;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+
+    h2{
+        color: #ddd;
+    }
+}
+
+.btn_cadastro{
+    background-color: #778da9;
+    height: 30px;
+    width: 110px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ddd;
+    
+}
+
+.btn_enviar{
+    background-color: #778da9;
+    height: 40px;
+    width: 130px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+/*cadastro*/
+.form_cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid #778da9;
+    border-radius: 20px;
+    width: 30vw;
+    margin: 80px auto;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+
+    h2{
+        color: #ddd;
+    }
+}
+
+.bntCadastrar{
+    background-color: #778da9;
+    height: 40px;
+    width: 130px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.btn_voltar{
+    background-color: #778da9;
+    height: 30px;
+    width: 110px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ddd;
+}

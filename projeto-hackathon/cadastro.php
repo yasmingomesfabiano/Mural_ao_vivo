@@ -38,15 +38,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="" method="post">
+    <form class="form_cadastro"  action="" method="post">
+        <h2>Nome</h2>
         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" require autocomplete='off'>
+        <h2>Email</h2>
         <input type="email" name="email" id="email" placeholder="Digite seu email" require autocomplete='off'>
+        <h2>Definir senha</h2>
         <input type="password" name="senha" id="senha" placeholder="Digite sua senha" require autocomplete='off'>
-        <button type="submit">Cadastrar</button>
+        <button class="bntCadastrar" type="submit">Cadastrar</button>
+        <a class="btn_voltar"href="login.php">Voltar</a>
     </form>
-    <a href="login.php">Voltar</a>
+    
     
 </body>
 </html>

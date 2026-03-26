@@ -1,11 +1,13 @@
 <?php
+session_start();
 file_put_contents("teste_recebimento.txt", print_r($_POST, true));
 require "conexao.php";
 
 $texto = $_POST['texto'] ?? null;
 $texto = trim($texto);
+$usuario_id = $_SESSION['id_usuario'] ?? null;
 
-if ($texto) {
+if ($texto && $usuario_id) {
   
     $proibidas = ['feio', 'chato', 'burro'];
     $substituicao = '******';
