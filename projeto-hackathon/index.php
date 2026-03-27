@@ -23,8 +23,8 @@ require_once 'conexao.php';
         <form id="formMensagem" class="form">
             <input type="text" name="texto" id="texto" class="inputtexto" 
                 placeholder="Envie sua mensagem..." required maxlength="500" autocomplete='off'>
-            <button type="submit" class="button">Enviar</button>
-            <span id="contador">500</span>
+            <button type="submit" class="button_publico">Enviar</button>
+    
             <span></span>
         </form>
 
