@@ -245,3 +245,27 @@ input:focus {
     font-size: 20px;
     color: #ddd;
 }
+
+/* Botão de abrir chat privado */
+.btn-privado {
+    background-color: transparent;
+    border: 1px solid #14213d;
+    color: #778da9;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-privado:hover {
+    background-color: #14213d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

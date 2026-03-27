@@ -19,4 +19,5 @@ $mensagens = $stmt -> fetchALL(PDO::FETCH_ASSOC);
 
 echo json_encode($mensagens);
 
+
 ?>

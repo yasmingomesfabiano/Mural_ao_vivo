@@ -2,12 +2,12 @@
 session_start();
 require_once 'conexao.php';
 
-if(!isset($_SESSION['id'])){
+if(!isset($_SESSION['id_usuario'])){
     die ('Acesso negado');
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $remetente = $_SESSION['id'];
+    $remetente = $_SESSION['id_usuario'];
     $destinatario = $_POST['destinatario'];
     $mensagem = $_POST['mensagem'];
 
@@ -20,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $stmt->bindParam(':msg', $mensagem);
 
        
+
         if($stmt->execute()){
             echo json_encode(['sucesso' => true]);
         }else{

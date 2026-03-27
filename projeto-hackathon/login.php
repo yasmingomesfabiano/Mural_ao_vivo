@@ -3,10 +3,10 @@ session_start();
 require_once 'conexao.php';
 
 
-if(isset($_SESSION['id'])) {
+if(isset($_SESSION['id_usuario'])) {
     header("Location: index.php");
     exit();
-} 
+}
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $email = $_POST['email'];
@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
   
     if($usuario && password_verify($senha, $usuario['senha_hash'])){
-        $_SESSION['id'] = $usuario['id'];
+        $_SESSION['id_usuario'] = $usuario['id']; 
         $_SESSION['nome'] = $usuario['nome'];
     
         header("Location: index.php"); // Isso faz ele mudar de página!
